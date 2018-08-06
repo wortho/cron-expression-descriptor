@@ -215,6 +215,18 @@ namespace CronExpressionDescriptor.Test
         }
 
         [Fact]
+        public void TestFifteenthAndThirtiethDayOfTheMonth()
+        {
+            Assert.Equal("Every minute, on day 15 and 30 of the month", GetDescription("* * 15,30 * *"));
+        }
+
+        [Fact]
+        public void TestWeekdayNearestFifteenthAndLastWeekdayOfTheMonth()
+        {
+            Assert.Equal("Every minute, on the weekday nearest day 15 and the last weekday of the month", GetDescription("* * 15W,LW * *"));
+        }
+
+        [Fact]
         public void TestFirstWeekdayOfTheMonth2()
         {
             Assert.Equal("Every minute, on the first weekday of the month", GetDescription("* * W1 * *"));
